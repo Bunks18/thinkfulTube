@@ -17,12 +17,15 @@ var displayCallBack = function(data) {
   console.log(data1);
 
   var Images = data1.items.map(function(item){
-    return "<img src=" + "'" + item.snippet.thumbnails.high.url + "' frameborder='0' >" 
+    return "<img src=" + "'" + item.snippet.thumbnails.high.url + "' frameborder='0' >"
     // "<img src=" + "'"+ item.snippet.thumbnails.high.url + ">" +  "< /img></a>";
+    console.log(item.snippet.id.videoId);
   })
   $(".js-search-results").append(Images);
 
 }
+
+// data1.items[1].id.videoId
 // <a href="http://www.youtube.com/watch?v=qqXi8WmQ_WM" rel="prettyPhoto" title=""><img src="images/thumbnails/flash-logo.jpg" alt="YouTube" width="60" /></a>
 
 // function displayImage(data){
@@ -37,7 +40,6 @@ var displayCallBack = function(data) {
 $(document).ready(function(){
   $('#btn').click(function(){
    getDataFromApi(displayCallBack);
-   console.log()
 
   });
 });
